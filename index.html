@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXAMEDGE STEALTH PRO</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="math-overlay"></div>
+
+    <div id="splash-screen">
+        <div class="warp-effect">
+            <h1 class="logo">EXAMEDGE</h1>
+            <p class="branding">BY VYOM SINGH</p>
+            <div class="glow-bar"></div>
+        </div>
+    </div>
+
+    <nav id="sidebar">
+        <div class="sidebar-top">
+            <div class="user-circle">VS</div>
+            <h3>EXAMEDGE</h3>
+        </div>
+        <ul class="nav-links">
+            <li onclick="showSection('dashboard')" class="active"><i class="fas fa-rocket"></i> Mission Control</li>
+            <li onclick="showSection('history')"><i class="fas fa-scroll"></i> Field History</li>
+            <li onclick="showSection('analytics')"><i class="fas fa-chart-line"></i> Deep Analysis</li>
+            <li onclick="showSection('profile')"><i class="fas fa-user-shield"></i> Pilot Profile</li>
+            <li onclick="resetApp()" class="danger-zone"><i class="fas fa-bomb"></i> Self Destruct</li>
+        </ul>
+    </nav>
+
+    <div id="main-container">
+        <header>
+            <button onclick="toggleSidebar()" class="menu-trigger"><i class="fas fa-bars"></i></button>
+            <h2 id="section-title">MISSION CONTROL</h2>
+        </header>
+
+        <div id="content-screen">
+            <div id="dashboard" class="page">
+                <div class="main-stats">
+                    <div class="stat-box">
+                        <span id="total-hrs">0</span>
+                        <label>Hours Logged</label>
+                    </div>
+                    <div class="stat-box">
+                        <span id="streak">0</span>
+                        <label>Day Streak</label>
+                    </div>
+                </div>
+
+                <div class="action-card">
+                    <h3><i class="fas fa-edit"></i> Log New Data</h3>
+                    <input type="text" id="subject" placeholder="Subject (Maths, Physics...)">
+                    <select id="type">
+                        <option value="Theory">Theory</option>
+                        <option value="PYQs">PYQs Solving</option>
+                        <option value="Mock Test">Mock Test</option>
+                    </select>
+                    <input type="number" id="hrs" placeholder="Duration (Hrs)">
+                    <button onclick="addLog()" class="prime-btn">EXECUTE LOG</button>
+                </div>
+            </div>
+
+            <div id="history" class="page hidden">
+                <div id="log-history-list"></div>
+            </div>
+
+            <div id="profile" class="page hidden">
+                <div class="profile-card">
+                    <p><b>Pilot Name:</b> <span id="p-name">--</span></p>
+                    <p><b>Current Goal:</b> <span id="p-goal">--</span></p>
+                    <p><b>Exam Date:</b> <span id="p-date">--</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
